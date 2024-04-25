@@ -12,6 +12,7 @@
     "@clerk/nextjs": "^4.29.12",
     "@clerk/themes": "^2.0.0",
     "@hookform/resolvers": "^3.3.4",
+    "@nextui-org/react": "^2.3.6",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-alert-dialog": "^1.0.5",
     "@radix-ui/react-aspect-ratio": "^1.0.3",
@@ -49,6 +50,7 @@
     "next": "14.2.2",
     "next-themes": "^0.3.0",
     "react": "^18",
+    "react-circular-progressbar": "^2.1.0",
     "react-day-picker": "^8.10.1",
     "react-dom": "^18",
     "react-hook-form": "^7.51.3",
@@ -57,6 +59,7 @@
     "sonner": "^1.4.41",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7",
+    "usehooks-ts": "^3.1.0",
     "vaul": "^0.9.0",
     "zod": "^3.22.4"
   },

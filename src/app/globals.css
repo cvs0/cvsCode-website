@@ -205,3 +205,15 @@ button[data-localization-key='userProfile.start.dangerSection.deleteAccountButto
       @apply bg-background text-foreground;
     }
   }
+
+  .text-gradient {
+    background: linear-gradient(to right, #ff69b4, #800080);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .dark .text-gradient {
+    background: linear-gradient(to right, #4169e1, #800080);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
