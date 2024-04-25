@@ -13,3 +13,13 @@ This is the official website for CVSCode. It includes the docs, homepage, and ab
   <img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original-wordmark.svg" title="NodeJS" alt="NodeJS" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/git/git-original-wordmark.svg" title="Git" **alt="Git" width="40" height="40"/>
 </div>
+
+## Pages
+
+- **Home**                 `/`
+- **About**                `/about`
+- **Getting-Started Docs** `/docs/getting-started`
+- **Installation Docs**.   `/docs/installation`
+- **Code Examples Docs**   `docs/code-examples`
+- **Sign-In**              `/sign-in`
+- **Sign-Up**              `/sign-up`
