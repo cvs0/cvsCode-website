@@ -16,7 +16,7 @@ const MainNav = () => {
   const { width } = useWindowSize();
   
   return (
-    <nav className="sticky top-0 z-10 bg-white dark:bg-background shadow-md w-full">
+    <nav className="sticky top-0 z-10 bg-white dark:bg-background dark:shadow-gray-900 shadow-md w-full">
       <div className="flex items-center justify-between py-4 px-8">
         <div className="flex items-center">
           <UserButton />
