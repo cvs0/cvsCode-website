@@ -38,6 +38,7 @@ const MainNav = () => {
             <CommandGroup key="docs" heading="Docs">
               <CommandItem className="" onSelect={() => {
                 router.push('/docs/getting-started')
+                setOpen(false)
               }}>
                 <File />
                 <span>Getting Started</span>
