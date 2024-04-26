@@ -4,8 +4,10 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ClerkProvider } from '@clerk/nextjs'
 import { ThemeProvider } from "@/components/theme-provider";
-import MainNav from "@/components/main-nav";
 import ScrollToTopButton from "@/components/scroll-to-top-button";
+import dynamic from "next/dynamic";
+
+const DynamicMainNav = dynamic(() => import('@/components/main-nav'), { ssr: false });
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -30,7 +32,7 @@ export default function RootLayout({
                   },
               }}
     >
-      <html lang="en">
+      <html lang="en" suppressHydrationWarning>
         <body className={cn(
           "min-h-screen bg-background antialiased",
           montserrat.className
@@ -41,7 +43,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <MainNav />
+            <DynamicMainNav />
             {children}
             <ScrollToTopButton />
           </ThemeProvider>

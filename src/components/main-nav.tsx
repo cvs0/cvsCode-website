@@ -1,14 +1,13 @@
 "use client"
 
-import Link from "next/link";
+import { UserButton } from "@clerk/nextjs";
+import { File } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { useWindowSize } from "../../hooks/use-window-size";
 import { ModeToggle } from "./mode-toggle";
 import { Button } from "./ui/button";
-import { Command, CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator, CommandShortcut } from "./ui/command";
-import { Calendar, Smile, Calculator, User, CreditCard, Settings, File } from "lucide-react";
-import { useState } from "react";
-import { UserButton } from "@clerk/nextjs";
-import { useRouter } from "next/navigation";
-import { useWindowSize } from "../../hooks/use-window-size";
+import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "./ui/command";
 const MainNav = () => {
   const [open, setOpen] = useState(false);
   const router = useRouter()
@@ -25,7 +24,7 @@ const MainNav = () => {
           <Button variant="ghost" className="ml-4" onClick={() => setOpen(!open)}>Docs</Button>
           <Button variant="ghost" className="ml-4" onClick={() => router.push('/about')}>About</Button>
           {width >= 640 && (
-            <Button variant="ghost" className="ml-4" onClick={() => router.push('https://packages.cvscode.cvs0.xyz')}>Packages</Button>
+            <Button variant="ghost" className="ml-4" onClick={() => window.location.href = 'https://packages.cvscode.cvs0.xyz'}>Packages</Button>
           )}
         </div>
         

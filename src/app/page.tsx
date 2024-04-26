@@ -8,21 +8,30 @@ import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { ChevronsUpDown } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SiJavascript, SiReact, SiTypescript } from 'react-icons/si';
 
 export default function Home() {
   const [open, setOpen] = useState(false)
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="mx-auto max-w-4xl px-6">
       {/* Introduction Section */}
       <section className="mt-10">
-        <BoldHeading heading="cvsCode" version/>
+        <BoldHeading heading="cvsCode" version isLoading={isLoading} />
         <h2 className="mt-4 text-2xl font-semibold tracking-tight text-center">
           A high-speed scripting language built on <span className="text-blue-500">TypeScript</span>
         </h2>
 
-        <div className="flex mt-6 justify-center">
+        <div className="flex mt-6 justify-center animate-pulse">
           <SiTypescript className="mr-6" size={40} />
           <SiJavascript className="mr-6" size={40} />
           <SiReact size={40} />
@@ -62,7 +71,7 @@ export default function Home() {
 
 
       <h1 className="font-bold mt-10">
-        Star our <span className="text-blue-500 underline"><a href="https://github.com/cvs0/cvsCode">GitHub</a></span> to find out when the newest features are releasing!
+        Star our <span className="text-blue-500 hover:underline"><a href="https://github.com/cvs0/cvsCode">GitHub</a></span> to find out when the newest features are releasing!
       </h1>
       <div className="mt-10 flex space-x-8">
         <Collapsible
