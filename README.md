@@ -18,8 +18,9 @@ This is the official website for CVSCode. It includes the docs, homepage, and ab
 
 - **Home**                 `/`
 - **About**                `/about`
+- **Docs Root Page**       `/docs/`
 - **Getting-Started Docs** `/docs/getting-started`
 - **Installation Docs**.   `/docs/installation`
-- **Code Examples Docs**   `docs/code-examples`
+- **Code Examples Docs**   `/docs/code-examples`
 - **Sign-In**              `/sign-in`
 - **Sign-Up**              `/sign-up`
