@@ -58,6 +58,14 @@ const DocsPage = () => {
                 Code Examples
               </a>
             </li>
+            <li>
+              <a
+                href="/docs/syntax"
+                className="text-blue-500 hover:underline"
+              >
+                Syntax
+              </a>
+            </li>
           </ul>
         </div>
         <div className="p-4 bg-gray-200 dark:bg-gray-900 rounded-lg">

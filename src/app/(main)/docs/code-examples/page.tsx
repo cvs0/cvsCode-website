@@ -1,7 +1,14 @@
 import BoldHeading from "@/components/bold-heading";
 import { CustomPagination } from "@/components/pageination";
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
-import { Slash } from "lucide-react"
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import { Slash } from "lucide-react";
 
 const CodeExamplesPage = () => {
   return (
@@ -13,13 +20,13 @@ const CodeExamplesPage = () => {
               <BreadcrumbLink href="/">Home</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator>
-                <Slash />
+              <Slash />
             </BreadcrumbSeparator>
             <BreadcrumbItem>
               <BreadcrumbLink href="/docs">Docs</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator>
-                <Slash />
+              <Slash />
             </BreadcrumbSeparator>
             <BreadcrumbItem>
               <BreadcrumbPage>Code-Examples</BreadcrumbPage>
