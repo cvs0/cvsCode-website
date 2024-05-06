@@ -48,15 +48,24 @@ const MainNav = () => {
             About
           </Button>
           {width >= 640 && (
-            <Button
-              variant="ghost"
-              className="ml-4"
-              onClick={() =>
-                (window.location.href = "https://packages.cvscode.cvs0.xyz")
-              }
-            >
-              Packages
-            </Button>
+            <>
+              <Button
+                variant="ghost"
+                className="ml-4"
+                onClick={() =>
+                  (window.location.href = "https://packages.cvscode.cvs0.xyz")
+                }
+              >
+                Packages
+              </Button>
+              <Button
+                variant="ghost"
+                className="ml-4"
+                onClick={() => router.push("/download")}
+              >
+                Download
+              </Button>
+            </>
           )}
         </div>
 
