@@ -24,6 +24,7 @@ import {
 import { getRepoForks, getRepoStars } from "@/lib/github";
 import { ChevronsUpDown, GitForkIcon, Star } from "lucide-react";
 import Image from "next/image";
+import Script from "next/script";
 import { useEffect, useState } from "react";
 import { SiJavascript, SiReact, SiTypescript } from "react-icons/si";
 import { TypeAnimation } from "react-type-animation";

@@ -6,6 +6,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/theme-provider";
 import ScrollToTopButton from "@/components/scroll-to-top-button";
 import dynamic from "next/dynamic";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const DynamicMainNav = dynamic(() => import("@/components/main-nav"), {
   ssr: false,
@@ -39,6 +40,7 @@ export default function RootLayout({
             content="width=device-width, initial-scale=1.0"
           />
         </head>
+        <GoogleAnalytics />
         <body
           className={cn(
             "min-h-screen bg-background antialiased",
