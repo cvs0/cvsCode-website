@@ -1,5 +1,6 @@
 "use client"
 
+import { getLatestVersion } from "@/lib/constants";
 import { Skeleton } from "./ui/skeleton";
 
 interface BoldHeadingProps {
@@ -20,7 +21,7 @@ export default function BoldHeading
                 <Skeleton className="inline-block h-20 w-60" />
             ) : (
                 <>
-                    {heading} {version && (<span className="text-blue-500 underline">0.4</span>)}
+                    {heading} {version && (<span className="text-blue-500 underline">{getLatestVersion()}</span>)}
                 </>
             )}
         </h1>
