@@ -36,7 +36,7 @@ const AboutPage = () => {
 
   return (
     <div className="mx-auto max-w-4xl px-6">
-      <div className="items-center justify-center">
+      <div className="items-center justify-center mt-10">
         <BoldHeading heading="About" />
       </div>
 

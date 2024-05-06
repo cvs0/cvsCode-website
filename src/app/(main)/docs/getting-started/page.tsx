@@ -16,6 +16,7 @@ import {
   PaginationEllipsis,
   PaginationNext,
 } from "@/components/ui/pagination";
+import { Separator } from "@/components/ui/separator";
 import { BreadcrumbItem, Code } from "@nextui-org/react";
 import { Slash } from "lucide-react";
 
@@ -53,6 +54,8 @@ const GettingStartedPage = () => {
             the steps to get started:
           </p>
         </div>
+
+        <Separator className="mt-5 bg-gray-200 dark:bg-gray-700" />
       </section>
 
       {/* Directory Navigation Section */}

@@ -8,6 +8,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { Separator } from "@/components/ui/separator";
 import { Slash } from "lucide-react";
 
 const CodeExamplesPage = () => {
@@ -44,6 +45,8 @@ const CodeExamplesPage = () => {
             <span className="text-blue-500">cvsCode</span> effectively!
           </p>
         </div>
+
+        <Separator className="mt-5 bg-gray-200 dark:bg-gray-700" />
       </section>
 
       {/* Basic Output Program */}

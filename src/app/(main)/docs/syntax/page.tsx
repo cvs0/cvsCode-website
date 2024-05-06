@@ -7,6 +7,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { Separator } from "@/components/ui/separator";
 import { Slash } from "lucide-react";
 
 const SyntaxPage = () => {
@@ -45,6 +46,8 @@ const SyntaxPage = () => {
             cvsCode syntax.
           </p>
         </div>
+
+        <Separator className="mt-5 bg-gray-200 dark:bg-gray-700" />
       </section>
 
       {/* Syntax Section 1: Variables */}

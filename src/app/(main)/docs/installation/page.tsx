@@ -8,6 +8,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { Separator } from "@/components/ui/separator";
 import { Code } from "@nextui-org/react";
 import { Slash } from "lucide-react";
 
@@ -46,6 +47,8 @@ const InstallationPage = () => {
             Here&apos;s how to get started:
           </p>
         </div>
+
+        <Separator className="mt-5 bg-gray-200 dark:bg-gray-700" />
       </section>
 
       {/* Installation Steps */}

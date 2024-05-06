@@ -21,3 +21,13 @@ export async function getRepoForks(owner: string, repo: string): Promise<number>
         return -1;
     }
 }
+
+export async function getRepoReleases(owner: string, repo: string): Promise<any[]> {
+    try {
+        const response = await axios.get(`https://api.github.com/repos/${owner}/${repo}/releases`);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching repository releases:', error);
+        return [];
+    }
+}
