@@ -2,7 +2,7 @@ import { getLatestVersion } from "@/lib/constants";
 import { currentUser } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 
-export default function GET(
+export async function GET(
     req: Request
 ) {
     try {
