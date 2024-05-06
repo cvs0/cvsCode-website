@@ -209,6 +209,11 @@ button[data-localization-key="userProfile.start.dangerSection.deleteAccountButto
   }
 }
 
+.text-fixed {
+  --tw-text-opacity: 1;
+  color: rgb(9 79 195)
+}
+
 .text-gradient {
   background: linear-gradient(to right, #ff69b4, #800080);
   -webkit-background-clip: text;

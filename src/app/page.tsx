@@ -13,8 +13,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselPrevious,
   CarouselNext,
+  CarouselPrevious,
 } from "@/components/ui/carousel";
 import {
   Collapsible,
@@ -22,7 +22,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { getRepoForks, getRepoStars } from "@/lib/github";
-import { ChevronsUpDown, GitForkIcon, Star, StarIcon } from "lucide-react";
+import { ChevronsUpDown, GitForkIcon, Star } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { SiJavascript, SiReact, SiTypescript } from "react-icons/si";
@@ -35,7 +35,7 @@ export default function Home() {
   const [repoForks, setRepoForks] = useState<number>(0);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+      const timer = setTimeout(() => {
       setIsLoading(false);
     }, 700);
     return () => clearTimeout(timer);
@@ -81,10 +81,10 @@ export default function Home() {
         />
 
         <div className="flex mt-6 justify-center">
-          <SiTypescript className="mr-6 animate-pulse" size={40} />
-          <SiJavascript className="mr-6 animate-pulse" size={40} />
-          <SiReact className="mr-6 animate-pulse" size={40} />
-          <h1 className="ml-20 mr-2 text-4xl">
+          <SiTypescript className="lg:mr-6 mr-2 animate-pulse" size={40} />
+          <SiJavascript className="lg:mr-6 mr-2 *:animate-pulse" size={40} />
+          <SiReact className="lg:mr-6 animate-pulse" size={40} />
+          <h1 className="ml-10 lg:ml-20 mr-2 text-4xl">
             {repoStars}
           </h1>
           <a target="_blank no-refferer" href="https://github.com/cvs0/CVSCode/stargazers" aria-label="Star github link">
@@ -141,7 +141,7 @@ export default function Home() {
                 />
               </svg>
             </span>
-            <span>Loops</span>
+            <span className="font-semibold">Loops</span>
           </li>
           <li className="flex items-center space-x-2">
             <span className="text-xl text-indigo-600">
@@ -160,7 +160,7 @@ export default function Home() {
                 />
               </svg>
             </span>
-            <span>Function declarations</span>
+            <span className="font-semibold">Function declarations</span>
           </li>
           <li className="flex items-center space-x-2">
             <span className="text-xl text-indigo-600">
@@ -179,7 +179,7 @@ export default function Home() {
                 />
               </svg>
             </span>
-            <span>Native functions</span>
+            <span className="font-semibold">Native functions</span>
           </li>
           <li className="flex items-center space-x-2">
             <span className="text-xl text-indigo-600">
@@ -198,7 +198,7 @@ export default function Home() {
                 />
               </svg>
             </span>
-            <span>High speed</span>
+            <span className="font-semibold">High speed</span>
           </li>
           <li className="flex items-center space-x-2">
             <span className="text-xl text-indigo-600">
@@ -217,14 +217,14 @@ export default function Home() {
                 />
               </svg>
             </span>
-            <span>Fast REPL</span>
+            <span className="font-semibold">Fast REPL</span>
           </li>
         </ul>
       </section>
 
       <h1 className="font-bold mt-10">
         Star our{" "}
-        <span className="text-blue-500 hover:underline">
+        <span className="text-fixed hover:underline font-extrabold">
           <a href="https://github.com/cvs0/cvsCode">GitHub</a>
         </span>{" "}
         to find out when the newest features are releasing!
@@ -236,9 +236,9 @@ export default function Home() {
           className="w-[350px] space-y-2"
         >
           <div className="flex items-center justify-between space-x-4 px-4 mt-10">
-            <h4 className="text-sm font-semibold">
+            <h2 className="text-sm font-semibold">
               <span className="font-extrabold">cvsCode</span> upcoming features
-            </h4>
+            </h2>
             <CollapsibleTrigger asChild>
               <Button variant="ghost" size="sm" className="w-9 p-0">
                 <ChevronsUpDown className="h-4 w-4" />
