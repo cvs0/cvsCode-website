@@ -21,7 +21,8 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { ChevronsUpDown } from "lucide-react";
+import { getRepoForks, getRepoStars } from "@/lib/github";
+import { ChevronsUpDown, GitForkIcon, Star, StarIcon } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { SiJavascript, SiReact, SiTypescript } from "react-icons/si";
@@ -30,13 +31,30 @@ import { TypeAnimation } from "react-type-animation";
 export default function Home() {
   const [open, setOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [repoStars, setRepoStars] = useState<number>(0);
+  const [repoForks, setRepoForks] = useState<number>(0);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 700);
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    async function fetchData() {
+        try {
+            const stars = await getRepoStars("cvs0", "cvsCode");
+            const forks = await getRepoForks("cvs0", "cvsCode");
+            setRepoStars(stars);
+            setRepoForks(forks);
+        } catch (error) {
+            console.error('Error fetching repository information:', error);
+        }
+    }
+    
+    fetchData();
+}, [setRepoStars, setRepoForks]);
 
   return (
     <div className="mx-auto max-w-4xl px-6">
@@ -62,10 +80,22 @@ export default function Home() {
           repeat={Infinity}
         />
 
-        <div className="flex mt-6 justify-center animate-pulse">
-          <SiTypescript className="mr-6" size={40} />
-          <SiJavascript className="mr-6" size={40} />
-          <SiReact size={40} />
+        <div className="flex mt-6 justify-center">
+          <SiTypescript className="mr-6 animate-pulse" size={40} />
+          <SiJavascript className="mr-6 animate-pulse" size={40} />
+          <SiReact className="mr-6 animate-pulse" size={40} />
+          <h1 className="ml-20 mr-2 text-4xl">
+            {repoStars}
+          </h1>
+          <a target="_blank no-refferer" href="https://github.com/cvs0/CVSCode/stargazers">
+            <Star className=" text-yellow-500" size={40} />
+          </a>
+          <h1 className="ml-4 mr-2 text-4xl">
+            {repoForks}
+          </h1>
+          <a target="_blank no-refferer" href="https://github.com/cvs0/CVSCode/forks">
+            <GitForkIcon className="mr-6 text-slate-400" size={40} />
+          </a>
         </div>
       </section>
 
