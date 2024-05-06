@@ -16,8 +16,14 @@ import { getRepoReleases } from "@/lib/github";
 import { useEffect, useState } from "react";
 import { SiLinux, SiMacos, SiWindows11 } from "react-icons/si";
 
+interface Release {
+  name: string;
+  assets: { browser_download_url: string }[];
+}
+
 const DownloadPage = () => {
-  const [releases, setReleases] = useState<Array<any>>([]);
+  const [releases, setReleases] = useState<Release[]>([]);
+  const [selectedReleaseName, setSelectedReleaseName] = useState<string>("");
 
   useEffect(() => {
     async function fetchReleases() {
@@ -28,6 +34,19 @@ const DownloadPage = () => {
     fetchReleases();
   }, []);
 
+  const handleDownload = () => {
+    const selectedRelease = releases.find((release) => release.name === selectedReleaseName);
+    if (selectedRelease) {
+      const version = selectedRelease.name.replace('CVSCode ', '');
+      const tag = `${version}`;
+      const downloadUrl = `https://github.com/cvs0/CVSCode/archive/refs/tags/${tag}.zip`;
+      window.open(downloadUrl, "_blank");
+    } else {
+      console.error("No release found for the selected version.");
+    }
+  };
+  
+
   return (
     <div className="mx-auto max-w-4xl px-6">
       <div className="text-center mt-10">
@@ -37,7 +56,10 @@ const DownloadPage = () => {
       <Separator className="mt-5 bg-gray-200 dark:bg-gray-700" />
 
       <div className="flex justify-center mt-10">
-        <Select>
+        <Select
+          value={selectedReleaseName}
+          onValueChange={setSelectedReleaseName}
+        >
           <SelectTrigger className="w-[180px] focus:ring-0">
             <SelectValue placeholder="Select download type" />
           </SelectTrigger>
@@ -45,7 +67,7 @@ const DownloadPage = () => {
             <SelectGroup>
               <SelectLabel>Releases</SelectLabel>
               {releases.map((release, index) => (
-                <SelectItem key={index} value={index.toString()}>
+                <SelectItem key={index} value={release.name}>
                   <span className="text-blue-500">{release.name}</span>
                 </SelectItem>
               ))}
@@ -53,10 +75,9 @@ const DownloadPage = () => {
           </SelectContent>
         </Select>
       </div>
-      
 
       <div className="flex justify-center mt-5">
-        <Button size="lg" className="font-semibold">
+        <Button size="lg" className="font-semibold" onClick={handleDownload}>
           Download
         </Button>
       </div>
