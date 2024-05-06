@@ -87,13 +87,13 @@ export default function Home() {
           <h1 className="ml-20 mr-2 text-4xl">
             {repoStars}
           </h1>
-          <a target="_blank no-refferer" href="https://github.com/cvs0/CVSCode/stargazers">
+          <a target="_blank no-refferer" href="https://github.com/cvs0/CVSCode/stargazers" aria-label="Star github link">
             <Star className=" text-yellow-500" size={40} />
           </a>
           <h1 className="ml-4 mr-2 text-4xl">
             {repoForks}
           </h1>
-          <a target="_blank no-refferer" href="https://github.com/cvs0/CVSCode/forks">
+          <a target="_blank no-refferer" href="https://github.com/cvs0/CVSCode/forks" aria-label="Fork github link">
             <GitForkIcon className="mr-6 text-slate-400" size={40} />
           </a>
         </div>
