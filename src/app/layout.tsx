@@ -8,6 +8,7 @@ import ScrollToTopButton from "@/components/scroll-to-top-button";
 import dynamic from "next/dynamic";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { Analytics } from "@vercel/analytics/react"
+import Footer from "@/components/Footer";
 
 const DynamicMainNav = dynamic(() => import("@/components/main-nav"), {
   ssr: false,
@@ -60,6 +61,7 @@ export default function RootLayout({
             <DynamicMainNav />
             {children}
             <ScrollToTopButton />
+            <Footer />
           </ThemeProvider>
         </body>
       </html>
