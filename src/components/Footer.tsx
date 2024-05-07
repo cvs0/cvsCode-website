@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from "react";
 import {
@@ -15,24 +15,46 @@ import { Button } from "./ui/button";
 const sections = [
   {
     title: "Pages",
-    items: ["Home", "Docs", "Download", "About"],
+    items: [
+      { name: "Home", href: "/" },
+      { name: "Docs", href: "/docs" },
+      { name: "Download", href: "/download" },
+      { name: "About", href: "/about" },
+    ],
   },
   {
     title: "Docs",
-    items: ["Getting Started", "Installation", "Code Examples", "Syntax"],
+    items: [
+      { name: "Getting Started", href: "/docs/getting-started" },
+      { name: "Installation", href: "/docs/installation" },
+      { name: "Code Examples", href: "/docs/code-examples" },
+      { name: "Syntax", href: "/docs/syntax" },
+    ],
   },
   {
     title: "Company",
-    items: ["Status", "Packages", "cvs0"],
+    items: [
+      { name: "Status", href: "https://status.cvscode.cvs0.xyz" },
+      { name: "Packages", href: "https://packages.cvscode.cvs0.xyz" },
+      { name: "cvs0", href: "https://cvs0.xyz" },
+    ],
   },
   {
     title: "Legal",
-    items: ["Privacy", "Terms", "Condition"],
+    items: [
+      { name: "Privacy", href: "/legal/privacy" },
+      { name: "Terms", href: "/legal/terms" },
+      { name: "Condition", href: "/legal/condition" },
+    ],
   },
 ];
 
 const items = [
-  { name: "Discord", icon: FaDiscord, link: "https://www.discordapp.com/users/1147380185893716068" },
+  {
+    name: "Discord",
+    icon: FaDiscord,
+    link: "https://www.discordapp.com/users/1147380185893716068",
+  },
   { name: "Twitter", icon: FaTwitter, link: "https://twitter.com/cvs0_" },
   { name: "Twitch", icon: FaTwitch, link: "https://www.twitch.tv/cvs0_" },
   { name: "Github", icon: FaGithub, link: "https://github.com/cvs0" },
@@ -53,7 +75,7 @@ const Footer = () => {
                   key={i}
                   className="py-1 text-black dark:text-gray-300 hover:text-blue-500 hover:underline hover:cursor-pointer"
                 >
-                  {item}
+                  <a href={item.href}>{item.name}</a>
                 </li>
               ))}
             </ul>
@@ -72,13 +94,13 @@ const Footer = () => {
               placeholder="Enter email.."
             />
             <Button
-                className="p-2 mb-4"
-                variant="outline"
-                onClick={(e) => {
-                    e.preventDefault()
-                }}
+              className="p-2 mb-4"
+              variant="outline"
+              onClick={(e) => {
+                e.preventDefault();
+              }}
             >
-                Subscribe
+              Subscribe
             </Button>
           </form>
         </div>
