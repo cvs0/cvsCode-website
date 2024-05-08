@@ -25,3 +25,4 @@ This is the official website for CVSCode. It includes the docs, homepage, and ab
 - **Syntax Docs**          `/docs/syntax`
 - **Sign-In**              `/sign-in`
 - **Sign-Up**              `/sign-up`
+- **Download**             `/download`
