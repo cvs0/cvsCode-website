@@ -35,14 +35,14 @@ const MainNav = () => {
           </Button>
           <Button
             variant="ghost"
-            className="ml-4"
+            className="lg:ml-4 ml-2"
             onClick={() => setOpen(!open)}
           >
             Docs
           </Button>
           <Button
             variant="ghost"
-            className="ml-4"
+            className="lg:ml-4 ml-2"
             onClick={() => router.push("/about")}
           >
             About
@@ -51,7 +51,7 @@ const MainNav = () => {
             <>
               <Button
                 variant="ghost"
-                className="ml-4"
+                className="lg:ml-4 ml-2"
                 onClick={() =>
                   (window.location.href = "https://packages.cvscode.cvs0.xyz")
                 }
@@ -60,7 +60,7 @@ const MainNav = () => {
               </Button>
               <Button
                 variant="ghost"
-                className="ml-4"
+                className="lg:ml-4 ml-2"
                 onClick={() => router.push("/download")}
               >
                 Download
