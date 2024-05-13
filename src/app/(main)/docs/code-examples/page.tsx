@@ -9,6 +9,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Separator } from "@/components/ui/separator";
+import { CodeBlock } from "@/components/CodeBlock";
 import { Slash } from "lucide-react";
 
 const CodeExamplesPage = () => {
@@ -57,17 +58,15 @@ const CodeExamplesPage = () => {
           Here&apos;s a simple program that checks a variable and prints a
           message:
         </p>
-        <div className="bg-gray-200 p-4 rounded-lg mt-4 dark:bg-customDark">
-          <pre className="whitespace-pre-wrap">
-            {`
+        <CodeBlock>
+        {`
 let x = 25;
 
 if (x == 25) {
     print("X is 25.")
 }
 `}
-          </pre>
-        </div>
+        </CodeBlock>
       </section>
 
       {/* Basic While Loop Program */}
