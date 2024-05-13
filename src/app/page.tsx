@@ -230,7 +230,7 @@ export default function Home() {
         </span>{" "}
         to find out when the newest features are releasing!
       </h1>
-      <div className="mt-10 flex space-x-8">
+      <div className="mt-10 lg:flex flex-col space-x-8">
         <Collapsible
           open={open}
           onOpenChange={setOpen}
