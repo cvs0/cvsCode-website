@@ -234,7 +234,7 @@ export default function Home() {
         <Collapsible
           open={open}
           onOpenChange={setOpen}
-          className="w-[350px] space-y-2"
+          className="w-[350px] sm:w-full space-y-2"
         >
           <div className="flex items-center justify-between space-x-4 px-4 mt-10">
             <h2 className="text-sm font-semibold">
