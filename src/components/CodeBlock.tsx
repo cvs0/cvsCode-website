@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 interface CodeBlockProps {
   children: string;
 }
-
 const CodeBlock: React.FC<CodeBlockProps> = ({ children }) => {
   const [isCopied, setIsCopied] = useState(false);
 
