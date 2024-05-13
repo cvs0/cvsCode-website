@@ -110,7 +110,11 @@ const Footer = () => {
         <p className="py-4">&copy; 2024 CVSCode. All rights reserved</p>
         <div className="flex justify-between sm:w-[300px] pt-4 text-2xl">
           {items.map((x, index) => {
-            return <x.icon key={index} className="hover:text-white" />;
+            return (
+              <a href={item.link} key={index}>
+                <x.icon key={index} className="hover:text-white" />
+              </a>
+            );
           })}
         </div>
       </div>
