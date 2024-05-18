@@ -73,7 +73,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mt-5 px-1 w-1/4 inline-block">
+      <div className="mt-5 px-1 lg:w-1/4 w-full inline-block">
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
               <AccordionTrigger>How large is the dev team?</AccordionTrigger>
