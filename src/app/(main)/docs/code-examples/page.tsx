@@ -1,4 +1,5 @@
 import BoldHeading from "@/components/bold-heading";
+import CodeBlock from "@/components/CodeBlock";
 import { CustomPagination } from "@/components/pageination";
 import {
   Breadcrumb,
@@ -9,7 +10,6 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Separator } from "@/components/ui/separator";
-import { CodeBlock } from "@/components/CodeBlock";
 import { Slash } from "lucide-react";
 
 const CodeExamplesPage = () => {
