@@ -230,11 +230,11 @@ export default function Home() {
         </span>{" "}
         to find out when the newest features are releasing!
       </h1>
-      <div className="mt-10 lg:flex flex-col space-x-8">
+      <div className="mt-10 lg:flex flex-col space-x-8 items-center">
         <Collapsible
           open={open}
           onOpenChange={setOpen}
-          className="w-[350px] space-y-2"
+          className="w-[350px] space-y-2 pb-5"
         >
           <div className="flex items-center justify-between space-x-4 px-4 mt-10">
             <h2 className="text-sm font-semibold">
