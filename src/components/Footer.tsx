@@ -112,7 +112,7 @@ const Footer = () => {
           {items.map((x, index) => {
             return (
               <a href={x.link} key={index}>
-                <x.icon key={index} className="hover:text-white" />
+                <x.icon key={index} />
               </a>
             );
           })}

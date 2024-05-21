@@ -59,7 +59,7 @@ const CodeExamplesPage = () => {
           message:
         </p>
         <CodeBlock>
-        {`
+          {`
 let x = 25;
 
 if (x == 25) {
@@ -77,17 +77,15 @@ if (x == 25) {
           value. Below is a straightforward program demonstrating this concept,
           where a condition is checked within the while loop before printing.
         </p>
-        <div className="bg-gray-200 p-4 rounded-lg mt-4 dark:bg-customDark">
-          <pre className="whitespace-pre-wrap">
-            {`
+        <CodeBlock>
+          {`
 let x = 25;
 
 while (x < 100) {
     print(x)
 }
 `}
-          </pre>
-        </div>
+        </CodeBlock>
       </section>
 
       {/* Operators */}
@@ -98,9 +96,8 @@ while (x < 100) {
           variables. Here&apos;s an example of using operators to check the
           result of an addition:
         </p>
-        <div className="bg-gray-200 p-4 rounded-lg mt-4 dark:bg-customDark">
-          <pre className="whitespace-pre-wrap">
-            {`
+        <CodeBlock>
+          {`
 let x = 25;
 let y = 20;
 
@@ -108,8 +105,7 @@ if (x + y == 45) {
     print("Result was true.")
 }
 `}
-          </pre>
-        </div>
+        </CodeBlock>
       </section>
 
       {/* Pagination */}
