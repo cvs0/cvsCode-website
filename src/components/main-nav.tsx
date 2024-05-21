@@ -1,7 +1,7 @@
 "use client";
 
-import { UserButton } from "@clerk/nextjs";
-import { File } from "lucide-react";
+import { redirectToSignIn, RedirectToSignIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { File, User } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useWindowSize } from "../../hooks/use-window-size";
@@ -25,6 +25,17 @@ const MainNav = () => {
     <nav className="sticky top-0 z-10 bg-white dark:bg-background dark:shadow-gray-900 shadow-md w-full backdrop-filter backdrop-blur-lg bg-opacity-30">
       <div className="flex items-center justify-between py-4 px-8">
         <div className="flex items-center">
+          {width >= 640 && (
+            <SignedOut>
+              <Button
+                className="lg:mr-10 mr-4"
+                onClick={() => router.push('/sign-in')}
+              >
+                <User className="mr-2"/>
+                Sign In
+              </Button>
+            </SignedOut>
+          )}
           <UserButton />
           <Button
             variant="ghost"
