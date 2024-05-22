@@ -39,21 +39,21 @@ const MainNav = () => {
           <UserButton />
           <Button
             variant="ghost"
-            className="ml-4"
+            className="ml-2"
             onClick={() => router.push("/")}
           >
             Home
           </Button>
           <Button
             variant="ghost"
-            className="lg:ml-4 ml-2"
+            className="lg:ml-4"
             onClick={() => setOpen(!open)}
           >
             Docs
           </Button>
           <Button
             variant="ghost"
-            className="lg:ml-4 ml-2"
+            className="lg:ml-4"
             onClick={() => router.push("/about")}
           >
             About

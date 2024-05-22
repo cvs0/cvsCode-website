@@ -1,16 +1,12 @@
 "use client";
 
-import React from "react";
-import {
-  FaFacebook,
-  FaGithub,
-  FaInstagram,
-  FaTwitter,
-  FaTwitch,
-  FaDiscord,
-} from "react-icons/fa";
-import { Input } from "./ui/input";
+import { FaDiscord, FaGithub, FaTwitch, FaTwitter } from "react-icons/fa";
 import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { useState } from "react";
+import { z } from "zod";
+
+const emailSchema = z.string().email();
 
 const sections = [
   {
@@ -61,6 +57,38 @@ const items = [
 ];
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  async function handleSubscribe(email: string) {
+    console.log(email)
+    try {
+      emailSchema.parse(email);
+
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (res.ok) {
+        setSuccess("Subscribed successfully");
+        setError("");
+      } else {
+        const data = await res.json();
+        setError(data.message || "Subscription failed");
+        setSuccess("");
+      }
+
+    } catch (e) {
+      setError("Invalid email" + e);
+      console.log("Invalid email");
+    }
+  }
+
   return (
     <div className="w-full mt-24 bg-accent/10 text-black dark:text-gray-300 py-y px-2">
       <div className="max-w-[1240px] mx-auto grid grid-cols-2 md:grid-cols-6 border-b-2 border-gray-600 py-8">
@@ -92,12 +120,15 @@ const Footer = () => {
               className="w-full p-2 mr-4 rounded-md mb-4"
               type="email"
               placeholder="Enter email.."
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <Button
               className="p-2 mb-4"
               variant="outline"
               onClick={(e) => {
                 e.preventDefault();
+                handleSubscribe(email);
               }}
             >
               Subscribe

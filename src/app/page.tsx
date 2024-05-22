@@ -234,7 +234,7 @@ export default function Home() {
         <Collapsible
           open={open}
           onOpenChange={setOpen}
-          className="w-[350px] space-y-2 pb-5"
+          className="lg:w-[350px] space-y-2 pb-5"
         >
           <div className="flex items-center justify-between space-x-4 px-4 mt-10">
             <h2 className="text-sm font-semibold">
@@ -260,7 +260,7 @@ export default function Home() {
           </CollapsibleContent>
         </Collapsible>
 
-        <Accordion type="single" collapsible className="w-full">
+        <Accordion type="single" collapsible className="lg:w-full w-3/4">
           <AccordionItem value="item-1">
             <AccordionTrigger>How large is the dev team?</AccordionTrigger>
             <AccordionContent>
