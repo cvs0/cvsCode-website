@@ -84,7 +84,7 @@ const Footer = () => {
       }
 
     } catch (e) {
-      setError("Invalid email" + e);
+      setError("Invalid email");
       console.log("Invalid email");
     }
   }

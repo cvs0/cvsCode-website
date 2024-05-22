@@ -1,4 +1,5 @@
 import BoldHeading from "@/components/bold-heading";
+import CodeBlock from "@/components/CodeBlock";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -61,14 +62,12 @@ const SyntaxPage = () => {
           <p className="text-gray-600 dark:text-gray-300">
             Variable Declaration:
           </p>
-          <div className="bg-gray-200 p-4 rounded-lg mt-4 dark:bg-customDark">
-            <pre className="whitespace-pre-wrap">
-              {`
+          <CodeBlock>
+            {`
 const x = 10;
 let y = "Hello CVSCode";
 `}
-            </pre>
-          </div>
+          </CodeBlock>
           <p className="mt-4 text-gray-600 dark:text-gray-300">
             In this example, `x` is assigned the value `10`, and `y` is assigned
             the string `&quot;Hello, cvsCode!&quot;`.
@@ -85,17 +84,15 @@ let y = "Hello CVSCode";
             use `if`, `else if`, and `else` to control the flow of your code.
           </p>
           <p className="text-gray-600 dark:text-gray-300">Example:</p>
-          <div className="bg-gray-200 p-4 rounded-lg mt-4 dark:bg-customDark">
-            <pre className="whitespace-pre-wrap">
-              {`const x = 10;
+          <CodeBlock>
+            {`const x = 10;
 
 if (x == 10) {
   print("x is equal to 10");
 } else {
   console.log("x is not equal to 10");
 }`}
-            </pre>
-          </div>
+          </CodeBlock>
           <p className="mt-4 text-gray-600 dark:text-gray-300">
             This code snippet checks if the variable `x` is equal to `10` and
             logs the appropriate message based on the condition.
@@ -112,15 +109,13 @@ if (x == 10) {
             the function name and parameters.
           </p>
           <p className="text-gray-600 dark:text-gray-300">Example:</p>
-          <div className="bg-gray-200 p-4 rounded-lg mt-4 dark:bg-customDark">
-            <pre className="whitespace-pre-wrap">
+          <CodeBlock>
               {`fn greet() {
   print("Hello!");
 };
 
 greet("cvsCode");`}
-            </pre>
-          </div>
+          </CodeBlock>
           <p className="mt-4 text-gray-600 dark:text-gray-300">
             This code defines a function `greet` that takes a `name` parameter
             and logs a greeting message. Function declarations end with a
