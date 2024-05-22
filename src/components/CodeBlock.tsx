@@ -20,7 +20,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ children }) => {
   };
 
   return (
-    <div className="bg-gray-200 p-4 rounded-lg mt-4 dark:bg-customDark z-10 relative">
+    <div className="bg-gray-200 p-4 rounded-lg mt-4 dark:bg-customDark relative">
       <Button
         className={cn("absolute top-8 right-8 bg-accent border-none px-2 py-1 rounded-md text-xs", isCopied ? "bg-emerald-500 hover:bg-emerald-200" : "bg-accent hover:bg-accent/5")}
         size="icon"
