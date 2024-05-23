@@ -22,7 +22,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { getRepoForks, getRepoStars } from "@/lib/github";
-import { ChevronsUpDown, GitForkIcon, Star } from "lucide-react";
+import { ChevronsUpDown, GitForkIcon, Star, Zap } from "lucide-react";
 import Image from "next/image";
 import Script from "next/script";
 import { useEffect, useState } from "react";
@@ -298,24 +298,31 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="relative bg-tech-pattern p-10">
+      <div className="relative bg-tech-pattern mt-10">
         {/* First Image */}
-        <div className="flex justify-end">
+        <div className="flex justify-end lg:pr-80">
           <Image
             src="/images/main.cvs.png"
             alt="Image"
-            width={1056}
-            height={646}
+            width={500}
+            height={822}
+            className="shadow-lg shadow-zinc-400 dark:shadow-zinc-700 rounded-2xl"
           />
         </div>
 
+        <div className="flex justify-center">
+          <h1 className="font-extrabold text-5xl p-10">
+            Fast. Efficient.
+          </h1>
+        </div>
         {/* Second Image */}
-        <div className="flex justify-start">
+        <div className="flex justify-start lg:pl-80">
           <Image
             src="/images/main.cvs-2.png"
             alt="Image"
-            width={1056}
-            height={646}
+            width={460}
+            height={822}
+            className="shadow-lg shadow-zinc-400 dark:shadow-zinc-700 rounded-2xl"
           />
         </div>
       </div>
