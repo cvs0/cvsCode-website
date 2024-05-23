@@ -22,7 +22,7 @@ const MainNav = () => {
   const { width } = useWindowSize();
 
   return (
-    <nav className="sticky top-0 z-10 bg-white dark:bg-background dark:shadow-gray-900 shadow-md w-full backdrop-filter backdrop-blur-lg bg-opacity-30">
+    <nav className="sticky top-0 z-10 bg-white dark:bg-background/10 shadow-md w-full backdrop-filter backdrop-blur-lg bg-opacity-30">
       <div className="flex items-center justify-between py-4 px-8">
         <div className="flex items-center">
           {width >= 640 && (
