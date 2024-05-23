@@ -22,7 +22,14 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { getRepoForks, getRepoStars } from "@/lib/github";
-import { ChevronsUpDown, GitForkIcon, Star, Zap } from "lucide-react";
+import {
+  ChevronsUpDown,
+  GitForkIcon,
+  Hourglass,
+  Star,
+  Zap,
+  ZapIcon,
+} from "lucide-react";
 import Image from "next/image";
 import Script from "next/script";
 import { useEffect, useState } from "react";
@@ -300,7 +307,12 @@ export default function Home() {
 
       <div className="relative bg-tech-pattern mt-10">
         {/* First Image */}
-        <div className="flex justify-end lg:pr-80">
+        <div className="lg:flex md:flex xl:flex justify-end lg:pr-80">
+          <h1 className="lg:mr-20 md:mr-20x xl:mr-20 flex flex-col justify-center font-bold text-right pb-10">
+            <span className="text-blue-500 text-4xl underline font-extrabold">CVSCode </span>
+            has support for objects and member calls.
+          </h1>
+
           <Image
             src="/images/main.cvs.png"
             alt="Image"
@@ -311,12 +323,15 @@ export default function Home() {
         </div>
 
         <div className="flex justify-center">
-          <h1 className="font-extrabold text-5xl p-10">
-            Fast. Efficient.
-          </h1>
+          <h1 className="font-extrabold text-5xl p-10">Fast. Efficient.</h1>
+        </div>
+
+        <div className="flex justify-center pb-10 flex-row">
+          <Zap className="text-yellow-500 fill-yellow-500" size={60} />
+          <Hourglass className="text-sky-500 fill-sky-500" size={60} />
         </div>
         {/* Second Image */}
-        <div className="flex justify-start lg:pl-80">
+        <div className="lg:flex md:flex xl:flex justify-start lg:pl-80">
           <Image
             src="/images/main.cvs-2.png"
             alt="Image"
@@ -324,6 +339,11 @@ export default function Home() {
             height={822}
             className="shadow-lg shadow-zinc-400 dark:shadow-zinc-700 rounded-2xl"
           />
+
+          <h1 className="lg:ml-20 md:ml-20x xl:ml-20 flex flex-col justify-center font-bold pt-10">
+            <span className="text-blue-500 text-4xl underline font-extrabold">CVSCode </span>
+            has support for function factories and closure patterns.
+          </h1>
         </div>
       </div>
     </>
